@@ -1,12 +1,13 @@
 module.exports = {
 	fromHtml,
-	fromMarkdown,
+	fromMarkdown
 };
 
 const htmlToPageData = require('./lib/html-to-page-data');
 const listHeadings = require('./lib/list-headings');
+const markdownToHtml = require('./lib/markdown-to-html');
+
 const fs = require('fs');
-const marked = require('marked');
 const nunjucks = require('nunjucks');
 
 function fromHtml(html, templateName) {
@@ -23,6 +24,6 @@ function fromHtml(html, templateName) {
 }
 
 function fromMarkdown(markdown, templateName) {
-	const html = marked(markdown);
+	const html = markdownToHtml(markdown);
 	return fromHtml(html, templateName);
 }
