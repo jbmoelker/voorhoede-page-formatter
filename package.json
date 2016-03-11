@@ -1,0 +1,24 @@
+{
+  "name": "voorhoede-page-formatter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbmoelker/voorhoede-page-formatter.git"
+  },
+  "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbmoelker/voorhoede-page-formatter/issues"
+  },
+  "homepage": "https://github.com/jbmoelker/voorhoede-page-formatter#readme",
+  "devDependencies": {
+    "cheerio": "0.20.0",
+    "marked": "0.3.5",
+    "nunjucks": "2.4.0"
+  }
+}
