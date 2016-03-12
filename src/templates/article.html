@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ language }}">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,8 @@
 			<h1>{{ title | safe }}</h1>
 			<p>{{ subtitle | safe }}</p>
 		</header>
+
+		{%- if toc.length -%}
 		<nav>
 			<h2>Table of contents</h2>
 			<ul>
@@ -26,6 +28,8 @@
 			{%- endfor -%}
 			</ul>
 		</nav>
+		{%- endif -%}
+
 		{{ body | safe }}
 	</main>
 </body>

@@ -6,16 +6,15 @@ module.exports = {
 const htmlToPageData = require('./lib/html-to-page-data');
 const listHeadings = require('./lib/list-headings');
 const markdownToHtml = require('./lib/markdown-to-html');
+const renderHtml = require('./lib/render-html');
 
-const fs = require('fs');
-const nunjucks = require('nunjucks');
-
-function fromHtml(html, templateName) {
-	templateName = 'article';
+function fromHtml(html, options) {
+	options = Object.assign({ language: 'en' }, options);
 	const data = htmlToPageData(html);
-	const toc = listHeadings(data.body);
-	const template = fs.readFileSync(`./src/templates/${templateName}.html`, 'utf8');
-	return nunjucks.renderString(template, {
+	const toc = (options.toc) ? listHeadings(data.body, options.toc) : [];
+
+	return renderHtml(options.templateName, {
+		language: options.language,
 		title: data.title,
 		subtitle: data.subtitle,
 		body: data.body,
@@ -23,7 +22,7 @@ function fromHtml(html, templateName) {
 	});
 }
 
-function fromMarkdown(markdown, templateName) {
+function fromMarkdown(markdown, options) {
 	const html = markdownToHtml(markdown);
-	return fromHtml(html, templateName);
+	return fromHtml(html, options);
 }
