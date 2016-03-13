@@ -1,10 +1,12 @@
 {
   "name": "voorhoede-page-formatter",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Format plain content as Voorhoede pages.",
   "main": "index.js",
   "scripts": {
-    "test": "node test/"
+    "example:build": "node ./examples/index.js",
+    "example:start": "http-server './examples/' -c-1 -o -p 38473",
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
     "nunjucks": "2.4.0",
     "prismjs": "1.4.1",
     "slug": "0.9.1"
+  },
+  "devDependencies": {
+    "tap": "5.7.0"
   }
 }
