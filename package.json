@@ -22,8 +22,7 @@
     "cheerio": "0.20.0",
     "marked": "0.3.5",
     "nunjucks": "2.4.0",
-    "prismjs": "1.4.1",
-    "slug": "0.9.1"
+    "prismjs": "1.4.1"
   },
   "devDependencies": {
     "tap": "5.7.0"
